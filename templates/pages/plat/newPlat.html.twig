@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+{% block title %}Créer un plat
+{% endblock %}
+{% block body %}
+	<div class="container">
+
+		<h1>Création d'un plat</h1>
+
+		{{ form_start(form) }}
+		<div class="form-group">
+			{{ form_label(form.title) }}
+			{{ form_widget(form.title) }}
+			<div class="col" id="form-error">
+				{{ form_errors(form.title) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.description) }}
+			{{ form_widget(form.description) }}
+			<div class="col" id="form-error">
+				{{ form_errors(form.description) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.price) }}
+			{{ form_widget(form.price) }}
+			<div class="col" id="form-error">
+				{{ form_errors(form.price) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.image) }}
+			{{ form_widget(form.image) }}
+			<div class="col" id="form-error">
+				{{ form_errors(form.image) }}
+			</div>
+		</div>
+		<div class="form-group">
+			{{ form_label(form.category) }}
+			{{ form_widget(form.category) }}
+			<div class="col" id="form-error">
+				{{ form_errors(form.category) }}
+			</div>
+		</div>
+
+		<div class="form-group">
+			{{ form_row(form.submit) }}
+		</div>
+	</div>
+	{{ form_end(form) }}
+</div>{% endblock %}

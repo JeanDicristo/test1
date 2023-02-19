@@ -4,21 +4,30 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="d-flex justify-content-center mt-4">Nos Menus et plats</h1>
-	{% for plat in plats %}
-		<div class="justify-content-center mt'">
-			<div class="card" style="width: 18rem;">
-				<img src="..." class="card-img-top" alt="...">
-				<div class="card-body">
-					<h4 class="card-title">{{plat.title}}</h4>
-					<h5 class="card-text">{{plat.price}}
-						€</h5>
-					<p class="card-text">{{plat.description}}</p>
-				</div>
+	<div class="container-fluid">
+		<h1 class="d-flex justify-content-center mt-4">Nos Menus et plats</h1>
+
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success mt-4">
+				{{ message }}
 			</div>
 		{% endfor %}
-	</div>
-    		<div class="navigation d-flex justify-content-center mt-4">
+
+		{% for plat in plats %}
+			<div class="justify-content-center mt'">
+				<div class="card" style="width: 18rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4 class="card-title">{{plat.title}}</h4>
+						<h5 class="card-text">{{plat.price}}
+							€</h5>
+						<p class="card-text">{{plat.description}}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="navigation d-flex justify-content-center mt-4">
 			{{ knp_pagination_render(plats) }}
 		</div>
+	</div>
 {% endblock %}
